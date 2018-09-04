@@ -1014,3 +1014,8 @@
     - action_store_sales_info
     - slot{"data_stored": true}
     - utter_confirm_salesrequest
+
+## ask for feedback
+* out_of_scope
+    - utter_default
+    - utter_ask_for_feedback
