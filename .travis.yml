@@ -11,8 +11,7 @@ script:
 - docker build --build-arg GITHUB_TOKEN=${GITHUB_TOKEN} -t gcr.io/replicated-test/rasa-demo:v$TRAVIS_BUILD_NUMBER
   -t gcr.io/replicated-test/rasa-demo:latest --cache-from gcr.io/replicated-test/rasa-demo:latest
   .
-- docker run gcr.io/replicated-test/rasa-demo:latest python -m rasa_core.evaluate -s data/test/stories.md -d models/dialogue
-- [ -s failed_stories.txt ]
+- docker run gcr.io/replicated-test/rasa-demo:latest python -m rasa_core.evaluate -s data/test/stories.md -d models/dialogue && [ -s failed_stories.txt ]
 - docker push gcr.io/replicated-test/rasa-demo:v$TRAVIS_BUILD_NUMBER
 - docker push gcr.io/replicated-test/rasa-demo:latest
 addons:
