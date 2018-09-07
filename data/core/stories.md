@@ -973,7 +973,6 @@
     - utter_ask_goal
 * deny
     - utter_nohelp
-    - utter_possibilities
 
 ## deny, then accept privacy policy - neither options
 * greet
@@ -988,8 +987,6 @@
     - utter_ask_goal
 * deny
     - utter_nohelp
-    - utter_possibilities
-
 
 ## neither --> newsletter
 * greet
@@ -1000,7 +997,6 @@
     - utter_ask_goal
 * deny
     - utter_nohelp
-    - utter_possibilities
 * signup_newsletter
     - utter_great
     - utter_ask_email
@@ -1022,7 +1018,6 @@
     - utter_ask_goal
 * deny
     - utter_nohelp
-    - utter_possibilities
 * contact_sales
     - utter_moreinformation
     - utter_ask_jobfunction
