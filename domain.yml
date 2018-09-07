@@ -151,9 +151,9 @@ templates:
     - text: "How is this conversation going?"
       buttons:
         - title: "👍"
-          payload: "/feedback{'feedback_value':'positive'}"
+          payload: "/feedback{\"feedback_value\":\"positive\"}"
         - title: "👎"
-          payload: "/feedback{'feedback_value':'negative'}"
+          payload: "/feedback{\"feedback_value\":\"negative\"}"
   utter_thank_usecase:
     - text: "Cool, thank you!"
   utter_canthelp:
@@ -162,6 +162,8 @@ templates:
     - text: "I'm afraid I can't help you then! For now I only have two skills:"
   utter_thumbsup:
     - text: "👍"
+    - text: "ok"
+    - text: "got it"
   utter_cantsignup:
     - text: "I can't sign you up if you don't provide your email 😉"
 
@@ -198,13 +200,13 @@ actions:
   - utter_thumbsup
   - utter_cantsignup
   - utter_ask_feedback
-  - demo.actions.ActionSubscribeNewsletter
-  - demo.actions.ActionStoreSalesInfo
-  - demo.actions.ActionStoreBudget
-  - demo.actions.ActionStoreUsecase
-  - demo.actions.ActionChitchat
-  - demo.actions.ActionStoreName
-  - demo.actions.ActionStoreCompany
-  - demo.actions.ActionStoreJob
-  - demo.actions.ActionStoreEmail
-  - demo.actions.ActionPause
+  - action_subscribe_newsletter
+  - action_store_sales_info
+  - action_store_budget
+  - action_store_usecase
+  - action_chitchat
+  - action_store_name
+  - action_store_company
+  - action_store_job
+  - action_store_email
+  - action_pause
