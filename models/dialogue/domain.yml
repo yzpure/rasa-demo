@@ -2,12 +2,12 @@
 ---
 actions:
 - utter_greet
-- utter_ask_usecase
+- utter_ask_use_case
 - utter_ask_businessmail
-- utter_ask_jobfunction
+- utter_ask_job_function
 - utter_ask_email
 - utter_ask_budget
-- utter_ask_company
+- utter_ask_company_name
 - utter_ask_goal
 - utter_inform_privacypolicy
 - utter_moreinformation
@@ -20,7 +20,7 @@ actions:
 - utter_no_speak
 - utter_out_of_scope
 - utter_possibilities
-- utter_ask_name
+- utter_ask_person_name
 - utter_change_mind
 - utter_must_accept
 - utter_noworries
@@ -49,6 +49,7 @@ actions:
 - action_store_job
 - action_store_email
 - action_pause
+- action_sales_form
 config:
   store_entities_as_slots: true
 entities:
@@ -111,10 +112,10 @@ intents:
 slots:
   budget:
     initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: rasa_core.slots.UnfeaturizedSlot
   company_name:
     initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: rasa_core.slots.UnfeaturizedSlot
   current_api:
     initial_value: null
     type: rasa_core.slots.CategoricalSlot
@@ -126,7 +127,7 @@ slots:
     type: rasa_core.slots.BooleanSlot
   email:
     initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: rasa_core.slots.UnfeaturizedSlot
   feedback_value:
     initial_value: null
     type: rasa_core.slots.CategoricalSlot
@@ -135,22 +136,25 @@ slots:
     - negative
   job_function:
     initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: rasa_core.slots.UnfeaturizedSlot
   person_name:
     initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: rasa_core.slots.UnfeaturizedSlot
   product:
     initial_value: null
     type: rasa_core.slots.CategoricalSlot
     values:
     - core
     - nlu
+  requested_slot:
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
   subscribed:
     initial_value: null
     type: rasa_core.slots.BooleanSlot
   use_case:
     initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: rasa_core.slots.UnfeaturizedSlot
 templates:
   utter_already_subscribed:
   - text: Looks like {email} is already subscribed - good choice! If you haven't received
@@ -162,7 +166,7 @@ templates:
   - text: One of the smart engineers at Rasa! 🧠
   utter_ask_businessmail:
   - text: What's your business email?
-  utter_ask_company:
+  utter_ask_company_name:
   - text: What company do you work for?
   utter_ask_email:
   - text: What's your email address?
@@ -182,14 +186,14 @@ templates:
   - text: A little bit too warm, otherwise fine.
   utter_ask_isbot:
   - text: Yep I'm a bot!
-  utter_ask_jobfunction:
+  utter_ask_job_function:
   - text: What's your job? 🕴
   utter_ask_migration:
   - text: Do you want to know more about NLU or Core? Or are you looking to switch
       over from LUIS, DialogFlow, or another service?
-  utter_ask_name:
+  utter_ask_person_name:
   - text: What's your name?
-  utter_ask_usecase:
+  utter_ask_use_case:
   - text: What kind of bot do you want to build with Rasa?
   utter_ask_weather:
   - text: I don't know about where you live, but in my world it's always sunny ☀️
