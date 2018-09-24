@@ -3,8 +3,10 @@
 import logging
 
 from rasa_core_sdk import Action
+from rasa_core_sdk.forms import FormAction, REQUESTED_SLOT
 from rasa_core_sdk.events import SlotSet, UserUtteranceReverted, \
                                  ConversationPaused
+from rasa_core.actions.action import ActionExecutionError
 
 from demo.api import MailChimpAPI
 from demo import config
@@ -202,3 +204,54 @@ class ActionPause(Action):
     def run(self, dispatcher, tracker, domain):
 
         return [ConversationPaused()]
+
+
+class ActionSalesForm(FormAction):
+
+    def name(self):
+        return "action_sales_form"
+
+    @staticmethod
+    def required_slots():
+        return ["job_function", "use_case", "budget", "person_name",
+                "company_name", "email"]
+
+    def validate(self, tracker):
+        events = []
+        entities = tracker.latest_message["entities"]
+        print(entities)
+        slot_to_fill = tracker.slots[REQUESTED_SLOT]
+
+        if entities:
+            for e in entities:
+                if slot_to_fill == "job_function":
+                    if e.get("entity") == "jobfunction":
+                        events.append(SlotSet("job_function", e['value']))
+                elif slot_to_fill == "budget":
+                    if e.get("entity") in ["number", "amount-of-money"]:
+                        events.append(SlotSet("budget", e['value']))
+                elif slot_to_fill == "person_name":
+                    if e.get("entity") == "name":
+                        events.append(SlotSet("person_name", e['value']))
+                elif slot_to_fill == "email":
+                    if e.get("entity") == "email":
+                        events.append(SlotSet("email", e['value']))
+                elif slot_to_fill == "company_name":
+                    if e.get("entity") == "company":
+                        events.append(SlotSet("company", e['value']))
+        else:
+            if slot_to_fill != "email":
+                events.append(SlotSet(slot_to_fill,
+                                      tracker.latest_message.get("text")))
+        print(events)
+        if events:
+            return events
+        else:
+            raise ActionExecutionError("Failed to validate slot {0} with "
+                                       "action {1}".format(
+                                                tracker.slots[REQUESTED_SLOT],
+                                                self.name()), self.name())
+
+    def submit(self, dispatcher, tracker, domain):
+        dispatcher.utter_template("utter_confirm_salesrequest", tracker)
+        return []

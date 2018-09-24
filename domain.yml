@@ -36,19 +36,19 @@ intents:
 
 slots:
   budget:
-    type: text
+    type: unfeaturized
   company_name:
-    type: text
+    type: unfeaturized
   email:
-    type: text
+    type: unfeaturized
   job_function:
-    type: text
+    type: unfeaturized
   person_name:
-    type: text
+    type: unfeaturized
   subscribed:
     type: bool
   use_case:
-    type: text
+    type: unfeaturized
   data_stored:
     type: bool
   feedback_value:
@@ -72,7 +72,7 @@ templates:
     - text: "What's your annual budget for conversational AI? 💸"
   utter_ask_businessmail:
     - text: "What's your business email?"
-  utter_ask_company:
+  utter_ask_company_name:
     - text: "What company do you work for?"
   utter_great:
     - text: "Great! 👍"
@@ -88,9 +88,9 @@ templates:
     - text: "Cool, thank you!"
   utter_ask_goal:
     - text: "Do you want more Rasa in your life? You can subscribe to our newsletter or you can talk to our nice sales team 🧞‍"
-  utter_ask_jobfunction:
+  utter_ask_job_function:
     - text: "What's your job? 🕴"
-  utter_ask_usecase:
+  utter_ask_use_case:
     - text: "What kind of bot do you want to build with Rasa?"
   utter_confirm_salesrequest:
     - text: "Thanks a bunch, we'll be in touch soon! ✉️"
@@ -117,7 +117,7 @@ templates:
     - text: "Sure! Let's get to know each other first 😉"
   utter_sales_contact:
     - text: "Thanks, now I need to know how we can reach you."
-  utter_ask_name:
+  utter_ask_person_name:
     - text: "What's your name?"
   utter_already_subscribed:
     - text: "Looks like {email} is already subscribed - good choice!
@@ -197,12 +197,12 @@ templates:
 
 actions:
   - utter_greet
-  - utter_ask_usecase
+  - utter_ask_use_case
   - utter_ask_businessmail
-  - utter_ask_jobfunction
+  - utter_ask_job_function
   - utter_ask_email
   - utter_ask_budget
-  - utter_ask_company
+  - utter_ask_company_name
   - utter_ask_goal
   - utter_inform_privacypolicy
   - utter_moreinformation
@@ -215,7 +215,7 @@ actions:
   - utter_no_speak
   - utter_out_of_scope
   - utter_possibilities
-  - utter_ask_name
+  - utter_ask_person_name
   - utter_change_mind
   - utter_must_accept
   - utter_noworries
@@ -244,3 +244,4 @@ actions:
   - action_store_job
   - action_store_email
   - action_pause
+  - action_sales_form
