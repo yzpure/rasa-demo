@@ -4,14 +4,15 @@
     - action_sales_form
     - form{"name": "action_sales_form"}
     - form{"name": null}
+* thank
+    - utter_noworries
 
 ## sales form (no email)
 * contact_sales
     - utter_moreinformation
     - action_sales_form
     - form{"name": "action_sales_form"}
-* enter_data
-    - utter_ask_email
-* enter_data{"email": "123"}
+* ask_weather
+    - utter_ask_weather
     - action_sales_form
     - form{"name": null}

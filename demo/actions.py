@@ -6,7 +6,7 @@ from rasa_core_sdk import Action
 from rasa_core_sdk.forms import FormAction, REQUESTED_SLOT
 from rasa_core_sdk.events import SlotSet, UserUtteranceReverted, \
                                  ConversationPaused
-from rasa_core.actions.action import ActionExecutionError
+from rasa_core_sdk import ActionExecutionError
 
 from demo.api import MailChimpAPI
 from demo import config
@@ -216,10 +216,9 @@ class ActionSalesForm(FormAction):
         return ["job_function", "use_case", "budget", "person_name",
                 "company_name", "email"]
 
-    def validate(self, tracker):
+    def validate(self, dispatcher, tracker, domain):
         events = []
         entities = tracker.latest_message["entities"]
-        print(entities)
         slot_to_fill = tracker.slots[REQUESTED_SLOT]
 
         if entities:
@@ -238,12 +237,16 @@ class ActionSalesForm(FormAction):
                         events.append(SlotSet("email", e['value']))
                 elif slot_to_fill == "company_name":
                     if e.get("entity") == "company":
-                        events.append(SlotSet("company", e['value']))
+                        events.append(SlotSet("company_name", e['value']))
         else:
-            if slot_to_fill != "email":
+            if (slot_to_fill != "email" and
+                    tracker.latest_message['intent'].get('name') == 'enter_data'):
                 events.append(SlotSet(slot_to_fill,
                                       tracker.latest_message.get("text")))
-        print(events)
+            elif (slot_to_fill == "email" and
+                    tracker.latest_message['intent'].get('name') == 'enter_data'):
+                dispatcher.utter_message("Please enter a valid email")
+                return []
         if events:
             return events
         else:
