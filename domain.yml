@@ -195,6 +195,9 @@ templates:
   utter_cant_answer_tech_question:
     - text: "I can't answer that"
 
+forms:
+  - action_sales_form
+
 actions:
   - utter_greet
   - utter_ask_use_case
@@ -234,6 +237,7 @@ actions:
   - utter_switch_dialogflow
   - utter_switch_luis
   - utter_cant_answer_tech_question
+  - utter_ask_weather
   - action_subscribe_newsletter
   - action_store_sales_info
   - action_store_budget
@@ -244,4 +248,3 @@ actions:
   - action_store_job
   - action_store_email
   - action_pause
-  - action_sales_form
