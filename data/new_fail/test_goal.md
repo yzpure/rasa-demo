@@ -23,8 +23,8 @@
     - rewind
     - rewind
 * enter_data
-    - chitchat: action_select_installation_command
-    - chitchat_fail: utter_ask_ready_to_build
+    - chitchat: action_select_installation_command -> fail
+    - getstarted_3: utter_ask_ready_to_build -> fail
 * affirm
     - getstarted_3: action_default_ask_affirmation
 * ask_whatspossible
@@ -49,21 +49,21 @@
     - greet_success: action_greet_user
     - slot{"shown_privacy": true}
 * technical_question
-    - faq: utter_getstarted
-    - faq_fail: utter_first_bot_with_rasa
+    - faq: utter_getstarted -> fail
+    - onboarding: utter_first_bot_with_rasa -> fail
 * affirm
-    - getstarted_1: action_set_onboarding
+    - getstarted_1: action_set_onboarding -> fail
     - slot{"onboarding": true}
-    - getstarted_1: utter_built_bot_before
+    - getstarted_1: utter_built_bot_before -> fail
 * deny
-    - getstarted_1: utter_explain_stack
-    - getstarted_1: utter_stack_details
-    - getstarted_1: utter_explain_nlucore
+    - getstarted_1: utter_explain_stack -> fail
+    - getstarted_1: utter_stack_details -> fail
+    - getstarted_1: utter_explain_nlucore -> fail
 * enter_data{"number": 1}
-    - chitchat: utter_great
-    - chitchat_fail: utter_ask_email
+    - chitchat: utter_great -> fail
+    - subscribe: utter_ask_email -> fail
 * deny
-    - subscribe: utter_cantsignup
+    - subscribe: utter_cantsignup -> fail
 
 ## Generated Story goal:1 step, id:5b7be2c22b874342aeca4216cfd5d35a, 12/15/18 1624335723075150223
 * get_started_step1
@@ -107,8 +107,7 @@
     - oos: utter_out_of_scope
 * enter_data{"email": "lavi@email.com"}
     - slot{"email": "lavi@email.com"}
-    - chitchat: action_greet_user
-    - chitchat_fail: action_listen
+    - chitchat: action_greet_user -> fail
 * greet
     - greet_success: action_greet_user
 * enter_data
@@ -120,9 +119,9 @@
     - greet_success: action_greet_user
     - slot{"shown_privacy": true}
 * enter_data
-    - chitchat: utter_possibilities
+    - chitchat: utter_possibilities -> fail
 * enter_data
-    - chitchat: utter_possibilities
+    - chitchat: utter_possibilities -> fail
 * how_to_get_started
     - onboarding: utter_getstarted
     - onboarding: utter_first_bot_with_rasa
@@ -174,6 +173,8 @@
     - chitchat: utter_possibilities
 * affirm
     - chitchat: utter_thumbsup
+
+==========> done until here
 
 ## Generated Story goal:1 step, id:19722107f07a4120bef398ea514e00de, 12/15/18 3342731703903234413
 * get_started_step1
@@ -601,4 +602,3 @@
 * rasa_cost
     - faq: utter_rasa_cost
     - chitchat: utter_anything_else
-
