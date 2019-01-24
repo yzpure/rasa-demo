@@ -153,8 +153,8 @@
 * affirm
     - getstarted_1: utter_ask_migration
 * enter_data
-    - getstarted_1: action_chitchat
-    - getstarted_1_fail: utter_ask_migration
+    - chitchat: action_chitchat
+    - getstarted_1: utter_ask_migration
 * ask_whatisrasa
     - chitchat: action_default_ask_affirmation
 
@@ -227,10 +227,13 @@
     - chitchat: action_chitchat
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * how_to_get_started
     - onboarding: utter_getstarted
     - onboarding: utter_first_bot_with_rasa
@@ -360,6 +363,7 @@
     - chitchat: action_chitchat
 * affirm
     - chitchat: utter_what_help
+    - chitchat_fail: action_listen
 * ask_whatspossible
     - chitchat: action_chitchat
 * how_to_get_started
@@ -404,6 +408,7 @@
     - slot{"shown_privacy": true}
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * affirm
     - chitchat: utter_thumbsup
     - chitchat: utter_anything_else
@@ -499,6 +504,7 @@
     - getstarted_1: utter_built_bot_before
 * enter_data
     - chitchat: utter_ask_migration
+    - chitchat_fail: action_listen
 * enter_data
     - getstarted_1: utter_contact_email
 * ask_howdoing
@@ -585,6 +591,7 @@
     - chitchat_fail: action_listen
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * how_to_get_started
     - onboarding: utter_getstarted
     - onboarding: utter_first_bot_with_rasa
@@ -655,6 +662,7 @@
     - chitchat: action_chitchat
 * affirm
     - chitchat: utter_what_help
+    - chitchat_fail: action_listen
 * ask_whatspossible
     - chitchat: action_chitchat
 * how_to_get_started
@@ -703,6 +711,7 @@
     - chitchat: action_chitchat
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 
 ## Generated Story goal:oos , id:5a1c8e47b3ba4dc38b2a3de3ffedee30, 12/17/18 4221492392327213787
 * get_started_step1
@@ -823,6 +832,7 @@
     - chitchat: action_chitchat
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 
 ## Generated Story goal:chitchat, id:9a569475596347ad9d181b33f887a87f, 12/15/18 2802758851923456977
 * get_started_step1
@@ -839,7 +849,7 @@
     - rewind
 * enter_data{"email": "tens@da.ok"}
     - slot{"email": "tens@da.ok"}
-    - fallback: action_store_email
+    - subscribe: action_store_email
     - slot{"email": "tens@da.ok"}
     - subscribe: action_subscribe_newsletter
     - slot{"subscribed": true}
@@ -856,7 +866,7 @@
     - rewind
 * enter_data
     - chitchat: utter_great
-    - chitchat: utter_anything_else
+    - chitchat_fail: utter_anything_else
 * affirm
     - chitchat: utter_great
     - chitchat: utter_anything_else
@@ -879,7 +889,7 @@
     - chitchat: utter_anything_else
 * enter_data
     - chitchat: utter_great
-    - chitchat: utter_anything_else
+    - chitchat_fail: utter_anything_else
 * handleinsult
     - chitchat: action_chitchat
 * enter_data
@@ -887,7 +897,7 @@
     - rewind
 * enter_data
     - chitchat: utter_great
-    - chitchat: utter_anything_else
+    - chitchat_fail: utter_anything_else
 * affirm
     - chitchat: utter_great
     - chitchat: utter_anything_else
@@ -1190,6 +1200,7 @@
     - chitchat: action_chitchat
 * affirm
     - chitchat: utter_what_help
+    - chitchat_fail: action_listen
 * ask_whatspossible
     - chitchat: action_chitchat
 * how_to_get_started
@@ -1363,6 +1374,7 @@
     - chitchat: action_chitchat
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 
 ## Generated Story goal:chitchat, id:ed1418fcc3884157bcc96a7c43d21ec0, 12/15/18 2178899423323461626
 * get_started_step1
@@ -1372,6 +1384,7 @@
     - chitchat: action_chitchat
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * ask_faq_languages
     - faq: action_faqs
 * enter_data
@@ -1600,6 +1613,7 @@
     - slot{"shown_privacy": true}
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * how_to_get_started
     - onboarding: utter_getstarted
     - onboarding: utter_first_bot_with_rasa
@@ -2054,6 +2068,7 @@
     - slot{"shown_privacy": true}
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * how_to_get_started
     - onboarding: utter_getstarted
     - onboarding: utter_first_bot_with_rasa
@@ -2747,6 +2762,7 @@
     - chitchat: action_chitchat
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * deny
     - chitchat: utter_nohelp
 * human_handoff
@@ -2946,6 +2962,7 @@
     - chitchat_fail: action_listen
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 
 ## Generated Story goal:1 step, id:32111c2c24bb44dba5da72e6978f29fe, 12/17/18 7799571079686222516
 * get_started_step1
@@ -2970,6 +2987,7 @@
     - chitchat: action_chitchat
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * out_of_scope
     - oos: utter_out_of_scope
     - chitchat: utter_possibilities
@@ -2978,6 +2996,7 @@
     - chitchat: utter_possibilities
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * greet
     - greet_success: action_greet_user
 * ask_whatisrasa
@@ -3010,6 +3029,7 @@
     - slot{"shown_privacy": true}
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * how_to_get_started
     - onboarding: utter_getstarted
     - onboarding: utter_first_bot_with_rasa
@@ -3118,6 +3138,7 @@
     - chitchat: action_chitchat
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * greet
     - greet_success: action_greet_user
 * greet
@@ -3336,6 +3357,7 @@
     - rewind
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
 * contact_sales
     - sales: utter_moreinformation
     - sales: utter_ask_jobfunction
@@ -3453,6 +3475,7 @@
     - getstarted_1: utter_explain_nlucore
 * enter_data
     - chitchat: utter_possibilities
+    - chitchat_fail: action_listen
     - getstarted_1: utter_stack_details
     - getstarted_1: utter_explain_nlucore
 * affirm
