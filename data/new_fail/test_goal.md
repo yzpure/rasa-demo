@@ -174,8 +174,6 @@
 * affirm
     - chitchat: utter_thumbsup
 
-==========> done until here
-
 ## Generated Story goal:1 step, id:19722107f07a4120bef398ea514e00de, 12/15/18 3342731703903234413
 * get_started_step1
     - greet_success: action_greet_user
@@ -256,7 +254,7 @@
     - rewind
     - rewind
 * enter_data
-    - getstarted_1: utter_tryout
+    - chitchat: utter_tryout -> fail
 * how_to_get_started{"product": "stack"}
     - slot{"product": "stack"}
     - getstarted_1_success: utter_quickstart
@@ -270,18 +268,17 @@
     - greet_success: action_greet_user
     - slot{"shown_privacy": true}
 * enter_data
-    - chitchat: utter_getstarted
-    - chitchat_fail: utter_first_bot_with_rasa
+    - chitchat: utter_getstarted -> fail
+    - onboarding: utter_first_bot_with_rasa -> fail
 * enter_data
-    - chitchat: action_greet_user
-    - chitchat_fail: action_listen
+    - chitchat: action_greet_user -> fail
 * affirm
-    - getstarted_1: utter_explain_nlu
-    - getstarted_1_fail: utter_tryout
+    - getstarted_1: utter_explain_nlu -> fail
+    - getstarted_1: utter_tryout -> fail
 * how_to_get_started{"product": "stack"}
     - slot{"product": "stack"}
-    - getstarted_1_fail: utter_quickstart
-    - chitchat: utter_anything_else
+    - getstarted_1_success: utter_quickstart -> fail
+    - chitchat: utter_anything_else -> fail
 * source_code
     - faq: utter_source_code
     - chitchat: utter_anything_else
@@ -315,7 +312,7 @@
     - chitchat: action_default_fallback
     - rewind
 * enter_data
-    - chitchat: utter_possibilities
+    - chitchat: utter_possibilities -> fail
 
 ## Generated Story goal:chitchat, id:0430099345234226aecbf5260cd864b8, 12/15/18 4509295789363688221
 * get_started_step1
@@ -410,12 +407,12 @@
     - rewind
 * handleinsult
     - chitchat: action_chitchat
-    - subscribe: utter_ask_email
+    - subscribe: utter_ask_email -> fail
 * deny
-    - subscribe: utter_cantsignup
+    - subscribe: utter_cantsignup -> fail
 * deny
-    - subscribe: utter_direct_install
-    - subscribe_fail: utter_anything_else
+    - chitchat: utter_direct_install -> fail
+    - chitchat: utter_anything_else -> fail
 * deny
     - chitchat: utter_nohelp
 
@@ -447,7 +444,7 @@
 * ask_languagesbot
     - chitchat: action_chitchat
 * enter_data
-    - chitchat: utter_possibilities
+    - chitchat: utter_possibilities -> fail
 * ask_faq_languages
     - faq: action_faqs
 * enter_data
@@ -514,10 +511,9 @@
     - rewind
     - rewind
 * enter_data
-    - chitchat: action_greet_user
-    - chitchat_fail: action_listen
+    - chitchat: action_greet_user -> fail
 * enter_data
-    - chitchat: utter_possibilities
+    - chitchat: utter_possibilities -> fail
 * greet
     - greet_success: action_greet_user
 * greet
@@ -543,7 +539,7 @@
 * install_rasa
     - getstarted_3: utter_ask_python_installed
 * enter_data
-    - getstarted_3: utter_get_python
+    - chitchat: utter_get_python -> fail
     - getstarted_3: utter_ask_pip_or_conda
 * enter_data{"package_manager": "pip"}
     - slot{"package_manager": "pip"}
@@ -555,28 +551,28 @@
     - greet_success: action_greet_user
     - slot{"shown_privacy": true}
 * enter_data
-    - chitchat: utter_getstarted
-    - chitchat_fail: utter_first_bot_with_rasa
+    - chitchat: utter_getstarted -> fail
+    - onboarding: utter_first_bot_with_rasa -> fail
 * out_of_scope
     - oos: utter_out_of_scope
     - chitchat: utter_possibilities
-    - utter_first_bot_with_rasa
+    - utter_first_bot_with_rasa -> fail
 * ask_whatspossible
     - chitchat: action_chitchat
-    - onboarding: utter_first_bot_with_rasa
+    - onboarding: utter_first_bot_with_rasa -> fail
 * affirm
-    - getstarted_1: action_set_onboarding
+    - getstarted_1: action_set_onboarding -> fail
     - slot{"onboarding": true}
-    - getstarted_1: utter_built_bot_before
+    - getstarted_1: utter_built_bot_before -> fail
 * affirm
-    - getstarted_1: utter_ask_migration
+    - getstarted_1: utter_ask_migration -> fail
 * affirm
-    - getstarted_1: utter_ask_which_tool
+    - getstarted_1: utter_ask_which_tool -> fail
 * enter_data
-    - getstarted_1: action_store_unknown_product
+    - getstarted_1: action_store_unknown_product -> fail
     - slot{"unknown_product": "Cleverbot"}
-    - getstarted_1_success: utter_no_guide_for_switch
-    - chitchat: utter_anything_else
+    - getstarted_1_success: utter_no_guide_for_switch -> fail
+    - chitchat: utter_anything_else -> fail
 * deny
     - chitchat: utter_nohelp
 * affirm
