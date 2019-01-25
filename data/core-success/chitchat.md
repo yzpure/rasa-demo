@@ -1,1227 +1,1227 @@
 ## chitchat
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt OR ask_whatspossible
-    - action_chitchat
+    - chitchat: action_chitchat
 
 ## deny ask_whatspossible
 * ask_whatspossible
-    - action_chitchat
+    - chitchat: action_chitchat
 * deny
-    - utter_nohelp
+    - chitchat: utter_nohelp
 
 ## more chitchat
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 
 ## ask_whatspossible
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_whatspossible
-    - action_chitchat
+    - chitchat: action_chitchat
 
 ## ask_whatspossible more
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_whatspossible
-    - action_chitchat
+    - chitchat: action_chitchat
 * ask_whatspossible
-    - action_chitchat
+    - chitchat: action_chitchat
 
 
 ## just newsletter + confirm
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 * signup_newsletter
-    - utter_great
-    - utter_ask_email
+    - subscribe: utter_great
+    - subscribe: utter_ask_email
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - subscribe: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_subscribe_newsletter
+    - subscribe: action_subscribe_newsletter
     - slot{"subscribed": true}
-    - utter_awesome
-    - utter_confirmationemail
-    - utter_docu
-    - utter_ask_feedback
+    - subscribe: utter_awesome
+    - subscribe_success: utter_confirmationemail
+    - subscribe: utter_docu
+    - feedback: utter_ask_feedback
 * affirm
-    - utter_thumbsup
-    - utter_anything_else
+    - chitchat: utter_thumbsup
+    - chitchat: utter_anything_else
 
 ## just newsletter + confirm
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * signup_newsletter
-    - utter_great
-    - utter_ask_email
+    - subscribe: utter_great
+    - subscribe: utter_ask_email
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt OR ask_whatspossible
-    - action_chitchat
-    - utter_ask_email
+    - subscribe: action_chitchat
+    - subscribe: utter_ask_email
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - subscribe: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_subscribe_newsletter
+    - subscribe: action_subscribe_newsletter
     - slot{"subscribed": true}
-    - utter_awesome
-    - utter_confirmationemail
-    - utter_docu
-    - utter_ask_feedback
+    - subscribe: utter_awesome
+    - subscribe_success: utter_confirmationemail
+    - subscribe: utter_docu
+    - feedback: utter_ask_feedback
 * affirm
-    - utter_thumbsup
-    - utter_anything_else
+    - chitchat: utter_thumbsup
+    - chitchat: utter_anything_else
 
 ## just newsletter (with email already) + confirm
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 * signup_newsletter{"email": "maxmeier@firma.de"}
-    - action_store_email
+    - subscribe: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_subscribe_newsletter
+    - subscribe: action_subscribe_newsletter
     - slot{"subscribed": true}
-    - utter_awesome
-    - utter_confirmationemail
-    - utter_docu
-    - utter_ask_feedback
+    - subscribe: utter_awesome
+    - subscribe_success: utter_confirmationemail
+    - subscribe: utter_docu
+    - feedback: utter_ask_feedback
 * affirm
-    - utter_thumbsup
-    - utter_anything_else
+    - chitchat: utter_thumbsup
+    - chitchat: utter_anything_else
 
 ## just newsletter (with email already)
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 * signup_newsletter{"email": "maxmeier@firma.de"}
-    - action_store_email
+    - subscribe: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_subscribe_newsletter
+    - subscribe: action_subscribe_newsletter
     - slot{"subscribed": true}
-    - utter_awesome
-    - utter_confirmationemail
-    - utter_docu
-    - utter_ask_feedback
+    - subscribe: utter_awesome
+    - subscribe_success: utter_confirmationemail
+    - subscribe: utter_docu
+    - feedback: utter_ask_feedback
 
 ## just newsletter (with email already) + confirm - already subscribed
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 * signup_newsletter{"email": "maxmeier@firma.de"}
-    - action_store_email
+    - subscribe: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_subscribe_newsletter
+    - subscribe: action_subscribe_newsletter
     - slot{"subscribed": false}
-    - utter_already_subscribed
-    - utter_docu
-    - utter_ask_feedback
+    - subscribe_success: utter_already_subscribed
+    - subscribe: utter_docu
+    - feedback: utter_ask_feedback
 * affirm
-    - utter_thumbsup
-    - utter_anything_else
+    - chitchat: utter_thumbsup
+    - chitchat: utter_anything_else
 
 ## just newsletter (with email already) - already subscribed
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 * signup_newsletter{"email": "maxmeier@firma.de"}
-    - action_store_email
+    - subscribe: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_subscribe_newsletter
+    - subscribe: action_subscribe_newsletter
     - slot{"subscribed": false}
-    - utter_already_subscribed
-    - utter_docu
-    - utter_ask_feedback
+    - subscribe_success: utter_already_subscribed
+    - subscribe: utter_docu
+    - feedback: utter_ask_feedback
 
 ## just newsletter +confirm - already subscribed
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 * signup_newsletter
-    - utter_great
-    - utter_ask_email
+    - subscribe: utter_great
+    - subscribe: utter_ask_email
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - subscribe: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_subscribe_newsletter
+    - subscribe: action_subscribe_newsletter
     - slot{"subscribed": false}
-    - utter_already_subscribed
-    - utter_docu
-    - utter_ask_feedback
+    - subscribe_success: utter_already_subscribed
+    - subscribe: utter_docu
+    - feedback: utter_ask_feedback
 * affirm
-    - utter_thumbsup
-    - utter_anything_else
+    - chitchat: utter_thumbsup
+    - chitchat: utter_anything_else
 
 ## just newsletter +confirm - already subscribed
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * signup_newsletter
-    - utter_great
-    - utter_ask_email
+    - subscribe: utter_great
+    - subscribe: utter_ask_email
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt OR ask_whatspossible
-    - action_chitchat
-    - utter_ask_email
+    - chitchat: action_chitchat
+    - subscribe: utter_ask_email
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - subscribe: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_subscribe_newsletter
+    - subscribe: action_subscribe_newsletter
     - slot{"subscribed": false}
-    - utter_already_subscribed
-    - utter_docu
-    - utter_ask_feedback
+    - subscribe_success: utter_already_subscribed
+    - subscribe: utter_docu
+    - feedback: utter_ask_feedback
 * affirm
-    - utter_thumbsup
-    - utter_anything_else
+    - chitchat: utter_thumbsup
+    - chitchat: utter_anything_else
 
 ## just newsletter
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 * signup_newsletter
-    - utter_great
-    - utter_ask_email
+    - subscribe: utter_great
+    - subscribe: utter_ask_email
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - subscribe: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_subscribe_newsletter
+    - subscribe: action_subscribe_newsletter
     - slot{"subscribed": true}
-    - utter_awesome
-    - utter_confirmationemail
-    - utter_docu
-    - utter_ask_feedback
+    - subscribe: utter_awesome
+    - subscribe_success: utter_confirmationemail
+    - subscribe: utter_docu
+    - feedback: utter_ask_feedback
 
 ## just newsletter
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * signup_newsletter
-    - utter_great
-    - utter_ask_email
+    - subscribe: utter_great
+    - subscribe: utter_ask_email
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt OR ask_whatspossible
-    - action_chitchat
-    - utter_ask_email
+    - chitchat: action_chitchat
+    - subscribe: utter_ask_email
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - subscribe: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_subscribe_newsletter
+    - subscribe: action_subscribe_newsletter
     - slot{"subscribed": true}
-    - utter_awesome
-    - utter_confirmationemail
-    - utter_docu
-    - utter_ask_feedback
+    - subscribe: utter_awesome
+    - subscribe_success: utter_confirmationemail
+    - subscribe: utter_docu
+    - feedback: utter_ask_feedback
 
 ## just newsletter - already subscribed
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 * signup_newsletter
-    - utter_great
-    - utter_ask_email
+    - subscribe: utter_great
+    - subscribe: utter_ask_email
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - subscribe: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_subscribe_newsletter
+    - subscribe: action_subscribe_newsletter
     - slot{"subscribed": false}
-    - utter_already_subscribed
-    - utter_docu
-    - utter_ask_feedback
+    - subscribe_success: utter_already_subscribed
+    - subscribe: utter_docu
+    - feedback: utter_ask_feedback
 
 ## just newsletter - already subscribed
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * signup_newsletter
-    - utter_great
-    - utter_ask_email
+    - subscribe: utter_great
+    - subscribe: utter_ask_email
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt OR ask_whatspossible
-    - action_chitchat
-    - utter_ask_email
+    - chitchat: action_chitchat
+    - subscribe: utter_ask_email
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - subscribe: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_subscribe_newsletter
+    - subscribe: action_subscribe_newsletter
     - slot{"subscribed": false}
-    - utter_already_subscribed
-    - utter_docu
-    - utter_ask_feedback
+    - subscribe_success: utter_already_subscribed
+    - subscribe: utter_docu
+    - feedback: utter_ask_feedback
 
 ## just sales
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 * contact_sales
-    - utter_moreinformation
-    - utter_ask_jobfunction
+    - sales: utter_moreinformation
+    - sales: utter_ask_jobfunction
 * enter_data{"jobfunction": "Product Manager"}
-    - action_store_job
+    - sales: action_store_job
     - slot{"job_function": "Product Manager"}
-    - utter_ask_usecase
+    - sales: utter_ask_usecase
 * enter_data    
-    - action_store_usecase
+    - sales: action_store_usecase
     - slot{"use_case": "bots"}
-    - utter_thank_usecase
-    - utter_ask_budget
+    - sales: utter_thank_usecase
+    - sales: utter_ask_budget
 * enter_data{"number": "100"} OR enter_data{"amount-of-money": "100k"} OR enter_data{"number": "100", "amount-of-money": "100"}
-    - action_store_budget
+    - sales: action_store_budget
     - slot{"budget": "100k"}
-    - utter_sales_contact
-    - utter_ask_name
+    - sales: utter_sales_contact
+    - sales: utter_ask_name
 * enter_data{"name": "Max Meier"}
-    - action_store_name
+    - sales: action_store_name
     - slot{"person_name": "Max Meier"}
-    - utter_ask_company
+    - sales: utter_ask_company
 * enter_data{"company": "Allianz"}
-    - action_store_company
+    - sales: action_store_company
     - slot{"company_name": "Allianz"}
-    - utter_ask_businessmail
+    - sales: utter_ask_businessmail
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - sales: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_store_sales_info
+    - sales: action_store_sales_info
     - slot{"data_stored": true}
-    - utter_confirm_salesrequest
-    - utter_ask_feedback
+    - sales_success: utter_confirm_salesrequest
+    - feedback: utter_ask_feedback
 
 ## just sales
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * contact_sales
-    - utter_moreinformation
-    - utter_ask_jobfunction
+    - sales: utter_moreinformation
+    - sales: utter_ask_jobfunction
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt OR ask_whatspossible
-    - action_chitchat
-    - utter_ask_jobfunction
+    - chitchat: action_chitchat
+    - sales: utter_ask_jobfunction
 * enter_data{"jobfunction": "Product Manager"}
-    - action_store_job
+    - sales: action_store_job
     - slot{"job_function": "Product Manager"}
-    - utter_ask_usecase
+    - sales: utter_ask_usecase
 * enter_data    
-    - action_store_usecase
+    - sales: action_store_usecase
     - slot{"use_case": "bots"}
-    - utter_thank_usecase
-    - utter_ask_budget
+    - sales: utter_thank_usecase
+    - sales: utter_ask_budget
 * enter_data{"number": "100"} OR enter_data{"amount-of-money": "100k"} OR enter_data{"number": "100", "amount-of-money": "100"}
-    - action_store_budget
+    - sales: action_store_budget
     - slot{"budget": "100k"}
-    - utter_sales_contact
-    - utter_ask_name
+    - sales: utter_sales_contact
+    - sales: utter_ask_name
 * enter_data{"name": "Max Meier"}
-    - action_store_name
+    - sales: action_store_name
     - slot{"person_name": "Max Meier"}
-    - utter_ask_company
+    - sales: utter_ask_company
 * enter_data{"company": "Allianz"}
-    - action_store_company
+    - sales: action_store_company
     - slot{"company_name": "Allianz"}
-    - utter_ask_businessmail
+    - sales: utter_ask_businessmail
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - sales: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_store_sales_info
+    - sales: action_store_sales_info
     - slot{"data_stored": true}
-    - utter_confirm_salesrequest
-    - utter_ask_feedback
+    - sales_success: utter_confirm_salesrequest
+    - feedback: utter_ask_feedback
 
 ## just sales
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * contact_sales
-    - utter_moreinformation
-    - utter_ask_jobfunction
+    - sales: utter_moreinformation
+    - sales: utter_ask_jobfunction
 * enter_data{"jobfunction": "Product Manager"}
-    - action_store_job
+    - sales: action_store_job
     - slot{"job_function": "Product Manager"}
-    - utter_ask_usecase
+    - sales: utter_ask_usecase
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt OR ask_whatspossible
-    - action_chitchat
-    - utter_ask_usecase
+    - chitchat: action_chitchat
+    - sales: utter_ask_usecase
 * enter_data    
-    - action_store_usecase
+    - sales: action_store_usecase
     - slot{"use_case": "bots"}
-    - utter_thank_usecase
-    - utter_ask_budget
+    - sales: utter_thank_usecase
+    - sales: utter_ask_budget
 * enter_data{"number": "100"} OR enter_data{"amount-of-money": "100k"} OR enter_data{"number": "100", "amount-of-money": "100"}
-    - action_store_budget
+    - sales: action_store_budget
     - slot{"budget": "100k"}
-    - utter_sales_contact
-    - utter_ask_name
+    - sales: utter_sales_contact
+    - sales: utter_ask_name
 * enter_data{"name": "Max Meier"}
-    - action_store_name
+    - sales: action_store_name
     - slot{"person_name": "Max Meier"}
-    - utter_ask_company
+    - sales: utter_ask_company
 * enter_data{"company": "Allianz"}
-    - action_store_company
+    - sales: action_store_company
     - slot{"company_name": "Allianz"}
-    - utter_ask_businessmail
+    - sales: utter_ask_businessmail
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - sales: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_store_sales_info
+    - sales: action_store_sales_info
     - slot{"data_stored": true}
-    - utter_confirm_salesrequest
-    - utter_ask_feedback
-
-
-## just sales
-* greet
-    - action_greet_user
-* contact_sales
-    - utter_moreinformation
-    - utter_ask_jobfunction
-* enter_data{"jobfunction": "Product Manager"}
-    - action_store_job
-    - slot{"job_function": "Product Manager"}
-    - utter_ask_usecase
-* enter_data    
-    - action_store_usecase
-    - slot{"use_case": "bots"}
-    - utter_thank_usecase
-    - utter_ask_budget
-* ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt OR ask_whatspossible
-    - action_chitchat
-    - utter_thank_usecase
-    - utter_ask_budget
-* enter_data{"number": "100"} OR enter_data{"amount-of-money": "100k"} OR enter_data{"number": "100", "amount-of-money": "100"}
-    - action_store_budget
-    - slot{"budget": "100k"}
-    - utter_sales_contact
-    - utter_ask_name
-* enter_data{"name": "Max Meier"}
-    - action_store_name
-    - slot{"person_name": "Max Meier"}
-    - utter_ask_company
-* enter_data{"company": "Allianz"}
-    - action_store_company
-    - slot{"company_name": "Allianz"}
-    - utter_ask_businessmail
-* enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
-    - slot{"email": "maxmeier@firma.de"}
-    - action_store_sales_info
-    - slot{"data_stored": true}
-    - utter_confirm_salesrequest
-    - utter_ask_feedback
-
+    - sales_success: utter_confirm_salesrequest
+    - feedback: utter_ask_feedback
 
 
 ## just sales
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * contact_sales
-    - utter_moreinformation
-    - utter_ask_jobfunction
+    - sales: utter_moreinformation
+    - sales: utter_ask_jobfunction
 * enter_data{"jobfunction": "Product Manager"}
-    - action_store_job
+    - sales: action_store_job
     - slot{"job_function": "Product Manager"}
-    - utter_ask_usecase
+    - sales: utter_ask_usecase
 * enter_data    
-    - action_store_usecase
+    - sales: action_store_usecase
     - slot{"use_case": "bots"}
-    - utter_thank_usecase
-    - utter_ask_budget
-* enter_data{"number": "100"} OR enter_data{"amount-of-money": "100k"} OR enter_data{"number": "100", "amount-of-money": "100"}
-    - action_store_budget
-    - slot{"budget": "100k"}
-    - utter_sales_contact
-    - utter_ask_name
+    - sales: utter_thank_usecase
+    - sales: utter_ask_budget
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt OR ask_whatspossible
-    - action_chitchat
-    - utter_ask_name
+    - chitchat: action_chitchat
+    - sales: utter_thank_usecase
+    - sales: utter_ask_budget
+* enter_data{"number": "100"} OR enter_data{"amount-of-money": "100k"} OR enter_data{"number": "100", "amount-of-money": "100"}
+    - sales: action_store_budget
+    - slot{"budget": "100k"}
+    - sales: utter_sales_contact
+    - sales: utter_ask_name
 * enter_data{"name": "Max Meier"}
-    - action_store_name
+    - sales: action_store_name
     - slot{"person_name": "Max Meier"}
-    - utter_ask_company
+    - sales: utter_ask_company
 * enter_data{"company": "Allianz"}
-    - action_store_company
+    - sales: action_store_company
     - slot{"company_name": "Allianz"}
-    - utter_ask_businessmail
+    - sales: utter_ask_businessmail
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - sales: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_store_sales_info
+    - sales: action_store_sales_info
     - slot{"data_stored": true}
-    - utter_confirm_salesrequest
-    - utter_ask_feedback
+    - sales_success: utter_confirm_salesrequest
+    - feedback: utter_ask_feedback
+
+
 
 ## just sales
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * contact_sales
-    - utter_moreinformation
-    - utter_ask_jobfunction
+    - sales: utter_moreinformation
+    - sales: utter_ask_jobfunction
 * enter_data{"jobfunction": "Product Manager"}
-    - action_store_job
+    - sales: action_store_job
     - slot{"job_function": "Product Manager"}
-    - utter_ask_usecase
+    - sales: utter_ask_usecase
 * enter_data    
-    - action_store_usecase
+    - sales: action_store_usecase
     - slot{"use_case": "bots"}
-    - utter_thank_usecase
-    - utter_ask_budget
+    - sales: utter_thank_usecase
+    - sales: utter_ask_budget
 * enter_data{"number": "100"} OR enter_data{"amount-of-money": "100k"} OR enter_data{"number": "100", "amount-of-money": "100"}
-    - action_store_budget
+    - sales: action_store_budget
     - slot{"budget": "100k"}
-    - utter_sales_contact
-    - utter_ask_name
-* enter_data{"name": "Max Meier"}
-    - action_store_name
-    - slot{"person_name": "Max Meier"}
-    - utter_ask_company
+    - sales: utter_sales_contact
+    - sales: utter_ask_name
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt OR ask_whatspossible
-    - action_chitchat
-    - utter_ask_company
+    - chitchat: action_chitchat
+    - sales: utter_ask_name
+* enter_data{"name": "Max Meier"}
+    - sales: action_store_name
+    - slot{"person_name": "Max Meier"}
+    - sales: utter_ask_company
 * enter_data{"company": "Allianz"}
-    - action_store_company
+    - sales: action_store_company
     - slot{"company_name": "Allianz"}
-    - utter_ask_businessmail
+    - sales: utter_ask_businessmail
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - sales: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_store_sales_info
+    - sales: action_store_sales_info
     - slot{"data_stored": true}
-    - utter_confirm_salesrequest
-    - utter_ask_feedback
+    - sales_success: utter_confirm_salesrequest
+    - feedback: utter_ask_feedback
 
 ## just sales
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * contact_sales
-    - utter_moreinformation
-    - utter_ask_jobfunction
+    - sales: utter_moreinformation
+    - sales: utter_ask_jobfunction
 * enter_data{"jobfunction": "Product Manager"}
-    - action_store_job
+    - sales: action_store_job
     - slot{"job_function": "Product Manager"}
-    - utter_ask_usecase
+    - sales: utter_ask_usecase
 * enter_data    
-    - action_store_usecase
+    - sales: action_store_usecase
     - slot{"use_case": "bots"}
-    - utter_thank_usecase
-    - utter_ask_budget
+    - sales: utter_thank_usecase
+    - sales: utter_ask_budget
 * enter_data{"number": "100"} OR enter_data{"amount-of-money": "100k"} OR enter_data{"number": "100", "amount-of-money": "100"}
-    - action_store_budget
+    - sales: action_store_budget
     - slot{"budget": "100k"}
-    - utter_sales_contact
-    - utter_ask_name
+    - sales: utter_sales_contact
+    - sales: utter_ask_name
 * enter_data{"name": "Max Meier"}
-    - action_store_name
+    - sales: action_store_name
     - slot{"person_name": "Max Meier"}
-    - utter_ask_company
-* enter_data{"company": "Allianz"}
-    - action_store_company
-    - slot{"company_name": "Allianz"}
-    - utter_ask_businessmail
+    - sales: utter_ask_company
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt OR ask_whatspossible
-    - action_chitchat
-    - utter_ask_businessmail
+    - chitchat: action_chitchat
+    - sales: utter_ask_company
+* enter_data{"company": "Allianz"}
+    - sales: action_store_company
+    - slot{"company_name": "Allianz"}
+    - sales: utter_ask_businessmail
 * enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
-    - action_store_email
+    - sales: action_store_email
     - slot{"email": "maxmeier@firma.de"}
-    - action_store_sales_info
+    - sales: action_store_sales_info
     - slot{"data_stored": true}
-    - utter_confirm_salesrequest
-    - utter_ask_feedback
+    - sales_success: utter_confirm_salesrequest
+    - feedback: utter_ask_feedback
+
+## just sales
+* greet
+    - greet_success: action_greet_user
+* contact_sales
+    - sales: utter_moreinformation
+    - sales: utter_ask_jobfunction
+* enter_data{"jobfunction": "Product Manager"}
+    - sales: action_store_job
+    - slot{"job_function": "Product Manager"}
+    - sales: utter_ask_usecase
+* enter_data    
+    - sales: action_store_usecase
+    - slot{"use_case": "bots"}
+    - sales: utter_thank_usecase
+    - sales: utter_ask_budget
+* enter_data{"number": "100"} OR enter_data{"amount-of-money": "100k"} OR enter_data{"number": "100", "amount-of-money": "100"}
+    - sales: action_store_budget
+    - slot{"budget": "100k"}
+    - sales: utter_sales_contact
+    - sales: utter_ask_name
+* enter_data{"name": "Max Meier"}
+    - sales: action_store_name
+    - slot{"person_name": "Max Meier"}
+    - sales: utter_ask_company
+* enter_data{"company": "Allianz"}
+    - sales: action_store_company
+    - slot{"company_name": "Allianz"}
+    - sales: utter_ask_businessmail
+* ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt OR ask_whatspossible
+    - chitchat: action_chitchat
+    - sales: utter_ask_businessmail
+* enter_data{"email": "maxmeier@firma.de"} OR enter_data{"number":"1"}
+    - sales: action_store_email
+    - slot{"email": "maxmeier@firma.de"}
+    - sales: action_store_sales_info
+    - slot{"data_stored": true}
+    - sales_success: utter_confirm_salesrequest
+    - feedback: utter_ask_feedback
 
 ## new to rasa + not new to chatbots + not migrating
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * affirm
-    - utter_ask_migration
+    - getstarted_1: utter_ask_migration
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * affirm OR how_to_get_started{"product":"stack"}
-    - utter_explain_nlu
-    - utter_explain_core
-    - utter_tryout
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
-
-
-## new to rasa + not new to chatbots + not migrating
-* greet
-    - action_greet_user
-* how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
-* ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_first_bot_with_rasa
-* affirm
-    - action_set_onboarding
-    - slot{"onboarding": true}
-    - utter_built_bot_before
-* affirm
-    - utter_ask_migration
-* deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
-* affirm OR how_to_get_started{"product":"stack"}
-    - utter_explain_nlu
-    - utter_explain_core
-    - utter_tryout
-* how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 
 ## new to rasa + not new to chatbots + not migrating
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
-* affirm
-    - action_set_onboarding
-    - slot{"onboarding": true}
-    - utter_built_bot_before
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_built_bot_before
+    - chitchat: action_chitchat
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - utter_ask_migration
+    - getstarted_1: action_set_onboarding
+    - slot{"onboarding": true}
+    - getstarted_1: utter_built_bot_before
+* affirm
+    - getstarted_1: utter_ask_migration
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * affirm OR how_to_get_started{"product":"stack"}
-    - utter_explain_nlu
-    - utter_explain_core
-    - utter_tryout
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
+
 
 ## new to rasa + not new to chatbots + not migrating
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
-* affirm
-    - utter_ask_migration
+    - getstarted_1: utter_built_bot_before
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_ask_migration
+    - chitchat: action_chitchat
+    - getstarted_1: utter_built_bot_before
+* affirm
+    - getstarted_1: utter_ask_migration
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * affirm OR how_to_get_started{"product":"stack"}
-    - utter_explain_nlu
-    - utter_explain_core
-    - utter_tryout
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 ## new to rasa + not new to chatbots + not migrating
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * affirm
-    - utter_ask_migration
-* deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_ask_migration
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_explain_nlucore
+    - chitchat: action_chitchat
+    - getstarted_1: utter_ask_migration
+* deny
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * affirm OR how_to_get_started{"product":"stack"}
-    - utter_explain_nlu
-    - utter_explain_core
-    - utter_tryout
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 ## new to rasa + not new to chatbots + not migrating
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * affirm
-    - utter_ask_migration
+    - getstarted_1: utter_ask_migration
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
-* affirm OR how_to_get_started{"product":"stack"}
-    - utter_explain_nlu
-    - utter_explain_core
-    - utter_tryout
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_tryout
+    - chitchat: action_chitchat
+    - getstarted_1: utter_explain_nlucore
+* affirm OR how_to_get_started{"product":"stack"}
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
+
+## new to rasa + not new to chatbots + not migrating
+* greet
+    - greet_success: action_greet_user
+* how_to_get_started
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
+* affirm
+    - getstarted_1: action_set_onboarding
+    - slot{"onboarding": true}
+    - getstarted_1: utter_built_bot_before
+* affirm
+    - getstarted_1: utter_ask_migration
+* deny
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
+* affirm OR how_to_get_started{"product":"stack"}
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_tryout
+* ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
+    - chitchat: action_chitchat
+    - getstarted_1: utter_tryout
+* how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
+    - getstarted_1_success: utter_quickstart
 
 
 ## new to rasa/bots, explain stack and try it out
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_built_bot_before
+    - chitchat: action_chitchat
+    - getstarted_1: utter_built_bot_before
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * affirm OR how_to_get_started{"product":"stack"}
-    - utter_explain_nlu
-    - utter_explain_core
-    - utter_tryout
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 ## new to rasa/bots, explain stack and try it out
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_explain_nlucore
+    - chitchat: action_chitchat
+    - getstarted_1: utter_explain_nlucore
 * affirm OR how_to_get_started{"product":"stack"}
-    - utter_explain_nlu
-    - utter_explain_core
-    - utter_tryout
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 ## new to rasa/bots, explain stack and try it out
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * affirm OR how_to_get_started{"product":"stack"}
-    - utter_explain_nlu
-    - utter_explain_core
-    - utter_tryout
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_tryout
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_tryout
+    - chitchat: action_chitchat
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 ## new to rasa/bots, explain core and try out stack
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * how_to_get_started{"product": "core"}
-    - utter_explain_core
-    - utter_also_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_also_explain_nlu
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_also_explain_nlu
+    - chitchat: action_chitchat
+    - getstarted_1: utter_also_explain_nlu
 * deny
-    - utter_tryout
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 ## new to rasa/bots, explain core and try out stack
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * how_to_get_started{"product": "core"}
-    - utter_explain_core
-    - utter_also_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_also_explain_nlu
 * deny
-    - utter_tryout
+    - getstarted_1: utter_tryout
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_tryout
+    - chitchat: action_chitchat
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 
 ## new to rasa/bots, explain core, then nlu and try out stack
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * how_to_get_started{"product": "core"}
-    - utter_explain_core
-    - utter_also_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_also_explain_nlu
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_also_explain_nlu
+    - chitchat: action_chitchat
+    - getstarted_1: utter_also_explain_nlu
 * affirm
-    - utter_explain_nlu
-    - utter_tryout
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 ## new to rasa/bots, explain core, then nlu and try out stack
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * how_to_get_started{"product": "core"}
-    - utter_explain_core
-    - utter_also_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_also_explain_nlu
 * affirm
-    - utter_explain_nlu
-    - utter_tryout
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_tryout
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_tryout
+    - chitchat: action_chitchat
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 
 ## new to rasa/bots, explain nlu and try out stack
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * how_to_get_started{"product": "nlu"}
-    - utter_explain_nlu
-    - utter_also_explain_core
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_also_explain_core
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_also_explain_core
+    - chitchat: action_chitchat
+    - getstarted_1: utter_also_explain_core
 * deny
-    - utter_tryout
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 ## new to rasa/bots, explain nlu and try out stack
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * how_to_get_started{"product": "nlu"}
-    - utter_explain_nlu
-    - utter_also_explain_core
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_also_explain_core
 * deny
-    - utter_tryout
+    - getstarted_1: utter_tryout
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_tryout
+    - chitchat: action_chitchat
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 
 ## new to rasa/bots, don't explain and try out stack
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_explain_nlucore
+    - chitchat: action_chitchat
+    - getstarted_1: utter_explain_nlucore
 * deny
-    - utter_tryout
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 ## new to rasa/bots, don't explain and try out stack
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * deny
-    - utter_tryout
+    - getstarted_1: utter_tryout
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_tryout
+    - chitchat: action_chitchat
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
 
 
 ## new to rasa/bots, explain and skip to installation
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * affirm OR how_to_get_started{"product":"stack"}
-    - utter_explain_nlu
-    - utter_explain_core
-    - utter_tryout
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_tryout
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_tryout
+    - chitchat: action_chitchat
+    - getstarted_1: utter_tryout
 * deny
-    - utter_direct_install
-    - utter_anything_else
+    - getstarted_1_success: utter_direct_install
+    - chitchat: utter_anything_else
 
 
 ## not new to rasa + not interested in products
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
+    - chitchat: action_chitchat
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * deny
-    - action_set_onboarding
+    - rasa_help: action_set_onboarding
     - slot{"onboarding": false}
-    - utter_ask_which_product
+    - rasa_help: utter_ask_which_product
 * deny
-    - utter_thumbsup
+    - chitchat: utter_thumbsup
 
 ## not new to rasa + not interested in products
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_first_bot_with_rasa
+    - chitchat: action_chitchat
+    - onboarding: utter_first_bot_with_rasa
 * deny
-    - action_set_onboarding
+    - rasa_help: action_set_onboarding
     - slot{"onboarding": false}
-    - utter_ask_which_product
+    - rasa_help: utter_ask_which_product
 * deny
-    - utter_thumbsup
+    - chitchat: utter_thumbsup
 
 ## not new to rasa + not interested in products
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * deny
-    - action_set_onboarding
+    - rasa_help: action_set_onboarding
     - slot{"onboarding": false}
-    - utter_ask_which_product
+    - rasa_help: utter_ask_which_product
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_ask_which_product
+    - chitchat: action_chitchat
+    - rasa_help: utter_ask_which_product
 * deny
-    - utter_thumbsup
+    - chitchat: utter_thumbsup
 
 
 ## not new to rasa + nlu + nothing special
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * deny
-    - action_set_onboarding
+    - rasa_help: action_set_onboarding
     - slot{"onboarding": false}
-    - utter_ask_which_product
+    - rasa_help: utter_ask_which_product
 * how_to_get_started{"product": "nlu"}
-    - utter_ask_for_nlu_specifics
+    - rasa_help: utter_ask_for_nlu_specifics
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_ask_for_nlu_specifics
+    - chitchat: action_chitchat
+    - rasa_help: utter_ask_for_nlu_specifics
 * deny
-    - utter_quickstart_nlu_only
-    - utter_anything_else
+    - getstarted_1_success: utter_quickstart_nlu_only
+    - chitchat: utter_anything_else
 
 
 ## not new to rasa + nlu + unknown topic
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * deny
-    - action_set_onboarding
+    - rasa_help: action_set_onboarding
     - slot{"onboarding": false}
-    - utter_ask_which_product
+    - rasa_help: utter_ask_which_product
 * how_to_get_started{"product": "nlu"}
-    - utter_ask_for_nlu_specifics
+    - rasa_help: utter_ask_for_nlu_specifics
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_ask_for_nlu_specifics
+    - chitchat: action_chitchat
+    - rasa_help: utter_ask_for_nlu_specifics
 * nlu_info
-    - action_store_unknown_nlu_part
-    - utter_dont_know_nlu_part
-    - utter_search_bar
-    - utter_anything_else
+    - rasa_help: action_store_unknown_nlu_part
+    - rasa_help: utter_dont_know_nlu_part
+    - rasa_help: utter_search_bar
+    - chitchat: utter_anything_else
 
 
 ## not new to rasa + nlu + intent + no recommendation
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * deny
-    - action_set_onboarding
+    - rasa_help: action_set_onboarding
     - slot{"onboarding": false}
-    - utter_ask_which_product
+    - rasa_help: utter_ask_which_product
 * how_to_get_started{"product": "nlu"}
-    - utter_ask_for_nlu_specifics
+    - rasa_help: utter_ask_for_nlu_specifics
 * nlu_info{"nlu_part": "intent classification"}
-    - utter_nlu_intent_tutorial
-    - utter_offer_recommendation
+    - rasa_help: utter_nlu_intent_tutorial
+    - rasa_help: utter_offer_recommendation
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_offer_recommendation
+    - chitchat: action_chitchat
+    - rasa_help: utter_offer_recommendation
 * deny
-    - utter_thumbsup
-    - utter_anything_else
+    - chitchat: utter_thumbsup
+    - chitchat: utter_anything_else
 
 
 ## not new to rasa + nlu + intent + pipeline recommendation, spacy
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * deny
-    - action_set_onboarding
+    - rasa_help: action_set_onboarding
     - slot{"onboarding": false}
-    - utter_ask_which_product
+    - rasa_help: utter_ask_which_product
 * how_to_get_started{"product": "nlu"}
-    - utter_ask_for_nlu_specifics
+    - rasa_help: utter_ask_for_nlu_specifics
 * nlu_info{"nlu_part": "intent classification"}
-    - utter_nlu_intent_tutorial
-    - utter_offer_recommendation
+    - rasa_help: utter_nlu_intent_tutorial
+    - rasa_help: utter_offer_recommendation
 * pipeline_recommendation OR affirm
-    - utter_what_language
+    - rasa_help: utter_what_language
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_what_language
+    - chitchat: action_chitchat
+    - rasa_help: utter_what_language
 * enter_data{"language": "en"}
-    - action_store_bot_language
+    - rasa_help: action_store_bot_language
     - slot{"can_use_spacy": true}
-    - utter_spacy_or_tensorflow
-    - utter_anything_else
+    - rasa_help_success: utter_spacy_or_tensorflow
+    - chitchat: utter_anything_else
 
 ## not new to rasa + nlu + intent + pipeline recommendation, not spacy
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * deny
-    - action_set_onboarding
+    - rasa_help: action_set_onboarding
     - slot{"onboarding": false}
-    - utter_ask_which_product
+    - rasa_help: utter_ask_which_product
 * how_to_get_started{"product": "nlu"}
-    - utter_ask_for_nlu_specifics
+    - rasa_help: utter_ask_for_nlu_specifics
 * nlu_info{"nlu_part": "intent classification"}
-    - utter_nlu_intent_tutorial
-    - utter_offer_recommendation
+    - rasa_help: utter_nlu_intent_tutorial
+    - rasa_help: utter_offer_recommendation
 * pipeline_recommendation OR affirm
-    - utter_what_language
+    - rasa_help: utter_what_language
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_what_language
+    - chitchat: action_chitchat
+    - rasa_help: utter_what_language
 * enter_data{"language": "en"}
-    - action_store_bot_language
+    - rasa_help: action_store_bot_language
     - slot{"can_use_spacy": false}
-    - utter_tensorflow
-    - utter_anything_else
+    - rasa_help_success: utter_tensorflow
+    - chitchat: utter_anything_else
 
 
 ## not new to rasa + nlu + entity + pipeline duckling
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * deny
-    - action_set_onboarding
+    - rasa_help: action_set_onboarding
     - slot{"onboarding": false}
-    - utter_ask_which_product
+    - rasa_help: utter_ask_which_product
 * how_to_get_started{"product": "nlu"}
-    - utter_ask_for_nlu_specifics
+    - rasa_help: utter_ask_for_nlu_specifics
 * nlu_info{"nlu_part": "entity recognition"}
-    - utter_nlu_entity_tutorial
-    - utter_offer_recommendation
+    - rasa_help: utter_nlu_entity_tutorial
+    - rasa_help: utter_offer_recommendation
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_offer_recommendation
+    - chitchat: action_chitchat
+    - rasa_help: utter_offer_recommendation
 * pipeline_recommendation OR affirm
-    - utter_ask_entities
+    - rasa_help: utter_ask_entities
 * enter_data{"entity": "date ranges"}
-    - action_store_entity_extractor
+    - rasa_help: action_store_entity_extractor
     - slot{"entity_extractor": "ner_duckling_http"}
-    - utter_duckling
-    - utter_anything_else
+    - rasa_help_success: utter_duckling
+    - chitchat: utter_anything_else
 
 ## not new to rasa + nlu + entity + pipeline duckling
 * greet
-    - action_greet_user
+    - greet_success: action_greet_user
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * deny
-    - action_set_onboarding
+    - rasa_help: action_set_onboarding
     - slot{"onboarding": false}
-    - utter_ask_which_product
+    - rasa_help: utter_ask_which_product
 * how_to_get_started{"product": "nlu"}
-    - utter_ask_for_nlu_specifics
+    - rasa_help: utter_ask_for_nlu_specifics
 * nlu_info{"nlu_part": "entity recognition"}
-    - utter_nlu_entity_tutorial
-    - utter_offer_recommendation
+    - rasa_help: utter_nlu_entity_tutorial
+    - rasa_help: utter_offer_recommendation
 * pipeline_recommendation OR affirm
-    - utter_ask_entities
+    - rasa_help: utter_ask_entities
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_ask_entities
+    - chitchat: action_chitchat
+    - rasa_help: utter_ask_entities
 * enter_data{"entity": "date ranges"}
-    - action_store_entity_extractor
+    - rasa_help: action_store_entity_extractor
     - slot{"entity_extractor": "ner_duckling_http"}
-    - utter_duckling
-    - utter_anything_else
+    - rasa_help_success: utter_duckling
+    - chitchat: utter_anything_else
 
 
 ## how to get started without privacy policy
 * how_to_get_started
-    - utter_getstarted
-    - utter_first_bot_with_rasa
+    - onboarding: utter_getstarted
+    - onboarding: utter_first_bot_with_rasa
 * ask_weather OR ask_builder OR ask_howdoing OR ask_whoisit OR ask_whatisrasa OR ask_isbot OR ask_howold OR ask_languagesbot OR ask_restaurant OR ask_time OR ask_wherefrom OR ask_whoami OR handleinsult OR nicetomeeyou OR telljoke OR ask_whatismyname OR howwereyoubuilt
-    - action_chitchat
-    - utter_first_bot_with_rasa
+    - chitchat: action_chitchat
+    - onboarding: utter_first_bot_with_rasa
 * affirm
-    - action_set_onboarding
+    - getstarted_1: action_set_onboarding
     - slot{"onboarding": true}
-    - utter_built_bot_before
+    - getstarted_1: utter_built_bot_before
 * affirm
-    - utter_ask_migration
+    - getstarted_1: utter_ask_migration
 * deny
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
+    - getstarted_1: utter_explain_stack
+    - getstarted_1: utter_stack_details
+    - getstarted_1: utter_explain_nlucore
 * affirm OR how_to_get_started{"product":"stack"}
-    - utter_explain_nlu
-    - utter_explain_core
-    - utter_tryout
+    - getstarted_1: utter_explain_nlu
+    - getstarted_1: utter_explain_core
+    - getstarted_1: utter_tryout
 * how_to_get_started{"product":"core"} OR affirm OR how_to_get_started{"product":"stack"}
-    - utter_quickstart
+    - getstarted_1_success: utter_quickstart
