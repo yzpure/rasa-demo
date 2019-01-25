@@ -222,6 +222,8 @@ intents:
     use_entities: true
 - ask_whatismyname:
     use_entities: true
+- ask_howbuilt:
+    use_entities: true
 - howwereyoubuilt:
     use_entities: true
 - handleinsult:

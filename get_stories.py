@@ -20,7 +20,7 @@ for row in pbar:
 for topic in set(topic_dict.values()):
     print('- '+topic)
 print('\n')
-exit()
+# exit()
 csvfile = codecs.open('data/Successful Conversations - main.csv', 'r')
 
 reader = csv.DictReader(csvfile)
@@ -36,7 +36,7 @@ texts_no = []
 
 pbar = tqdm(reader)
 for row in pbar:
-    if row['sender_id'] and len(row['sender_id']) > 20 and row['reason for failure'] != 'NLU' and row['user goal fullfilled'] and row['user goal fullfilled'] != 'neutral' and '11.2018' not in row['date']: #row['user goal fullfilled']: # and row['user goal supported'] == 'getstarted':
+    if row['sender_id'] and len(row['sender_id']) > 20 and row['reason for failure'] != 'NLU' and row['user goal fullfilled'] and row['user goal fullfilled'] != 'neutral' and row['date'] in {'07/01/19', '15/01/19', '17/01/19'}: # '11.2018' not in row['date']: #row['user goal fullfilled']: # and row['user goal supported'] == 'getstarted':
         total += 1
         response = requests.get(url.format(sender_id=row['sender_id']), headers=headers)
         if response.status_code == 200:
@@ -50,17 +50,17 @@ for row in pbar:
 
             parts = text.split('\n')
 
-            continue_flag = False
+            continue_flag = True#False
             if not parts[1].startswith('* get_started_step'):
                 continue_flag = True
             for part in parts[2:]:
                 if part.startswith('* get_started_step'):
-                    continue_flag = True
+                    continue_flag = False#True
             if continue_flag:
                 continue
 
-            for action, topic in topic_dict.items():
-                text = text.replace(action + '\n', '{}: {}'.format(topic, action) + '\n')
+            # for action, topic in topic_dict.items():
+            #     text = text.replace(action + '\n', '{}: {}'.format(topic, action) + '\n')
 
             texts_yes.append(text)
             # if 'es' in row['user goal fullfilled']:
@@ -79,16 +79,16 @@ print(len(texts_no))
 
 random.shuffle(texts_yes)
 
-os.remove("data/success/train_for_success.md")
-with io.open('data/success/train_for_success.md', 'a', encoding="utf-8") as f:
-    for text in texts_yes[:-20]:#[-250:-50]:
-        f.write(text + "\n")
-    for text in texts_no[:-15]:
-        f.write(text + "\n")
+# os.remove("data/success/train_for_success.md")
+# with io.open('data/success/train_for_success.md', 'a', encoding="utf-8") as f:
+#     for text in texts_yes[:-20]:#[-250:-50]:
+#         f.write(text + "\n")
+#     for text in texts_no[:-15]:
+#         f.write(text + "\n")
 
-os.remove("data/success/test_for_success.md")
-with io.open('data/success/test_for_success.md', 'a', encoding="utf-8") as f:
-    for text in texts_yes[-20:]:
+# os.remove("data/success/test_for_success.md")
+with io.open('data/success/test_new_for_success.md', 'a', encoding="utf-8") as f:
+    for text in texts_yes:
         f.write(text + "\n")
     for text in texts_no[-15:]:
         f.write(text + "\n")

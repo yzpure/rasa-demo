@@ -38,6 +38,7 @@ intents:
   - ask_wherefrom
   - ask_whoami
   - ask_whatismyname
+  - ask_howbuilt
   - howwereyoubuilt
   - handleinsult
   - nicetomeeyou

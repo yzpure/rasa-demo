@@ -2,14 +2,14 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "package_manager",
-        "language",
         "nlu_part",
-        "current_api",
-        "email",
+        "package_manager",
         "product",
         "feedback_value",
-        "name"
+        "name",
+        "current_api",
+        "language",
+        "email"
       ]
     },
     "action_greet_user": {
@@ -22,56 +22,19 @@
         "onboarding"
       ]
     },
-    "utter_what_help": {
+    "utter_already_subscribed": {
       "slots": []
     },
-    "action_default_ask_rephrase": {
-      "slots": []
-    },
-    "action_default_ask_affirmation": {
-      "slots": []
-    },
-    "utter_out_of_scope": {
-      "slots": []
-    },
-    "action_store_email": {
+    "action_store_problem_description": {
       "slots": [
-        "email"
+        "problem_description"
       ]
-    },
-    "action_subscribe_newsletter": {
-      "slots": [
-        "subscribed"
-      ]
-    },
-    "utter_anything_else": {
-      "slots": []
     },
     "action_chitchat": {
       "slots": []
     },
-    "utter_canthelp": {
+    "action_default_ask_affirmation": {
       "slots": []
-    },
-    "action_store_company": {
-      "slots": [
-        "company_name"
-      ]
-    },
-    "action_faqs": {
-      "slots": []
-    },
-    "action_store_unknown_nlu_part": {
-      "slots": [
-        "unknown_nlu_part"
-      ]
-    },
-    "action_default_fallback": {
-      "slots": [
-        "requested_slot",
-        "feedback_value",
-        "feedback_message"
-      ]
     },
     "action_store_job": {
       "slots": [
@@ -93,27 +56,27 @@
         "person_name"
       ]
     },
+    "action_store_company": {
+      "slots": [
+        "company_name"
+      ]
+    },
     "utter_ask_businessmail": {
       "slots": []
     },
-    "null": {
+    "action_default_ask_rephrase": {
+      "slots": []
+    },
+    "utter_anything_else": {
       "slots": []
     },
     "utter_contact_email": {
       "slots": []
     },
-    "utter_ask_jobfunction": {
+    "utter_what_help": {
       "slots": []
     },
-    "action_store_problem_description": {
-      "slots": [
-        "problem_description"
-      ]
-    },
-    "utter_ask_describe_problem": {
-      "slots": []
-    },
-    "utter_tryout": {
+    "utter_out_of_scope": {
       "slots": []
     },
     "utter_first_bot_with_rasa": {
@@ -123,6 +86,32 @@
       "slots": []
     },
     "utter_bye": {
+      "slots": []
+    },
+    "action_default_fallback": {
+      "slots": [
+        "feedback_value",
+        "feedback_message",
+        "requested_slot"
+      ]
+    },
+    "null": {
+      "slots": []
+    },
+    "utter_tryout": {
+      "slots": []
+    },
+    "action_store_email": {
+      "slots": [
+        "email"
+      ]
+    },
+    "action_subscribe_newsletter": {
+      "slots": [
+        "subscribed"
+      ]
+    },
+    "utter_ask_describe_problem": {
       "slots": []
     },
     "utter_explain_nlucore": {
@@ -136,28 +125,39 @@
         "entity_extractor"
       ]
     },
-    "utter_already_subscribed": {
+    "action_faqs": {
       "slots": []
     },
-    "utter_ask_usecase": {
+    "utter_canthelp": {
       "slots": []
     },
-    "utter_possibilities": {
+    "action_store_unknown_nlu_part": {
+      "slots": [
+        "unknown_nlu_part"
+      ]
+    },
+    "utter_ask_jobfunction": {
       "slots": []
     },
     "utter_nohelp": {
       "slots": []
     },
-    "utter_ask_which_tool": {
-      "slots": []
-    },
-    "utter_ask_email": {
+    "utter_possibilities": {
       "slots": []
     },
     "action_store_unknown_product": {
       "slots": [
         "unknown_product"
       ]
+    },
+    "utter_ask_email": {
+      "slots": []
+    },
+    "utter_ask_usecase": {
+      "slots": []
+    },
+    "utter_ask_which_tool": {
+      "slots": []
     },
     "action_store_sales_info": {
       "slots": [
@@ -175,8 +175,8 @@
     "rasa_core.policies.keras_topic_policy.KerasTopicPolicy",
     "rasa_core.policies.form_policy.FormPolicy"
   ],
-  "trained_at": "20190117-173649",
+  "trained_at": "20190122-171207",
   "rasa_core": "0.13.0a5",
-  "tensorflow": "1.12.0",
+  "tensorflow": "1.10.0",
   "sklearn": "0.19.1"
 }

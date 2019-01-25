@@ -15,6 +15,7 @@
     "intent_ask_faq_voice",
     "intent_ask_faq_what_is_forum",
     "intent_ask_how_contribute",
+    "intent_ask_howbuilt",
     "intent_ask_howdoing",
     "intent_ask_howold",
     "intent_ask_isbot",
