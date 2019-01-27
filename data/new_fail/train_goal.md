@@ -1233,7 +1233,7 @@
     - slot{"shown_privacy": true}
 * enter_data
     - chitchat: utter_getstarted -> fail
-    - chitchat: utter_first_bot_with_rasa -> fail
+    - onboarding: utter_first_bot_with_rasa -> fail
 * affirm
     - getstarted_1: action_faqs -> fail
     - getstarted_1: utter_first_bot_with_rasa -> fail
@@ -2786,7 +2786,7 @@
     - form{"name": null}
     - slot{"requested_slot": null}
 * ask_isbot
-    - fallback: action_default_ask_affirmation
+    - chitchat: action_default_ask_affirmation
 * ask_isbot
     - fallback: action_revert_fallback_events
     - rewind
